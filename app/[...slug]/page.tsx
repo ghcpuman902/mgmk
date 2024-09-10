@@ -1,15 +1,15 @@
 import { Fira_Code } from 'next/font/google'
-import { getDomain, getUrls } from './[...slug]/utils'
-import UrlListItem from './[...slug]/UrlListItem'
+import { getDomain, getUrls } from './utils'
+import UrlListItem from './UrlListItem'
 import { redirect } from 'next/navigation'
 
 const firaCode = Fira_Code({ subsets: ['latin'] })
 
-export default function Page() {
+export default function Page({ params }: { params: { slug: string[] } }) {
   const domain = getDomain()
   const urls = getUrls()
 
-  const path = ''
+  const path = '/' + params.slug.join('/')
   const urlPair = urls.find(u => u.shortPath === path)
 
   if (urlPair) {

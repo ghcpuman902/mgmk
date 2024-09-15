@@ -14,27 +14,13 @@ export default function Page({ params }: { params: { slug: string[] } }) {
 
   if (urlPair) {
     redirect(`https://${urlPair.longDomain}${urlPair.longPath}`)
+  } else {
+    // Improvement: Show a message if no URL is found
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center">
+        <h1 className="text-2xl mb-6">URL Not Found</h1>
+        <p>The URL you are looking for does not exist.</p>
+      </div>
+    )
   }
-
-  return (
-    <div className={`min-h-screen bg-gray-100 flex flex-col items-center justify-center ${firaCode.className}`}>
-      <div className="text-gray-800 p-8">
-        <h1 className="text-2xl mb-6">{domain} URL Shortener</h1>
-        <ul className="space-y-2">
-          {urls.map((url, index) => (
-            <UrlListItem
-              key={index}
-              shortDomain={domain}
-              shortPath={url.shortPath}
-              longDomain={url.longDomain}
-              longPath={url.longPath}
-            />
-          ))}
-        </ul>
-      </div>
-      <div className="text-gray-500 text-xs mt-8">
-        If you want to park any URL, please get in touch at hi@manglekuo.com
-      </div>
-    </div>
-  )
 }

@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation'
 
 const firaCode = Fira_Code({ subsets: ['latin'] })
 
-export default function Page() {
+export default async function Page() {
   const domain = getDomain()
   const urls = getUrls()
 

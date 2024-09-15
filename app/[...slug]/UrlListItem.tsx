@@ -212,14 +212,14 @@ const getSectionSteps = (shortSection: string, longSection: string): string[] =>
 
 function mergeSteps(steps_arrays: (string[] | string)[]): string[] {
     // Initialize variables
-    let elements = steps_arrays;
+    const elements = steps_arrays;
     let maxLength = 0;
-    let arrays: { index: number, array: string[] }[] = [];
+    const arrays: { index: number, array: string[] }[] = [];
 
     // Collect arrays and determine the maximum length
     for (let i = 0; i < elements.length; i++) {
         if (Array.isArray(elements[i])) {
-            let arr = elements[i] as string[];
+            const arr = elements[i] as string[];
             arrays.push({ index: i, array: arr });
             if (arr.length > maxLength) {
                 maxLength = arr.length;
@@ -228,10 +228,10 @@ function mergeSteps(steps_arrays: (string[] | string)[]): string[] {
     }
 
     // Stretch each array to match the maximum length
-    let stretchedArrays: { [key: number]: string[] } = {};
-    for (let item of arrays) {
-        let origArray = item.array;
-        let origLength = origArray.length;
+    const stretchedArrays: { [key: number]: string[] } = {};
+    for (const item of arrays) {
+        const origArray = item.array;
+        const origLength = origArray.length;
         let stretchedArray: string[] = [];
         if (origLength === maxLength) {
             stretchedArray = origArray.slice();
@@ -249,11 +249,11 @@ function mergeSteps(steps_arrays: (string[] | string)[]): string[] {
     }
 
     // Build the merged steps
-    let merged_steps: string[] = [];
+    const merged_steps: string[] = [];
     for (let i = 0; i < maxLength; i++) {
-        let step_components: string[] = [];
+        const step_components: string[] = [];
         for (let j = 0; j < elements.length; j++) {
-            let element = elements[j];
+            const element = elements[j];
             if (Array.isArray(element)) {
                 // Use stretched array
                 step_components.push(stretchedArrays[j][i]);

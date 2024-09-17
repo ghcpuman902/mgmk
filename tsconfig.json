@@ -18,8 +18,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": ["./*"],
+      "@vercel/analytics/*": ["node_modules/@vercel/analytics/*"]
+    },
+    "baseUrl": "."
   },
   "include": [
     "next-env.d.ts",

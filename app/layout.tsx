@@ -1,24 +1,26 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Inter } from 'next/font/google';
+import React from 'react';
+import type { Metadata, Viewport } from 'next';
+import { Fira_Code } from 'next/font/google';
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  variable: "--font-fira-code",
+  display: 'swap',
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'URL Shortener',
   description: 'URL shortener for mg.mk and mangl.es',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: '#000000',
 };
 
 export default function RootLayout({
@@ -28,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased`}>
+      <body className={`${firaCode.variable} font-sans antialiased fixed inset-0 overflow-hidden bg-black`}>
         {children}
         <Analytics />
       </body>

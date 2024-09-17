@@ -1,10 +1,7 @@
-import { Fira_Code } from 'next/font/google'
 import { getDomain, getUrls } from '../[...slug]/utils'
 import UrlListItem from '../[...slug]/UrlListItem'
 import { redirect } from 'next/navigation'
-import { MGMKLogo } from '../mgmkLogo'
 import Link from 'next/link'
-const firaCode = Fira_Code({ subsets: ['latin'] })
 
 export default async function Page() {
     const domain = getDomain()
@@ -18,7 +15,7 @@ export default async function Page() {
     }
 
     return (
-        <div className={`min-h-screen ${firaCode.className}`}>
+        <div className={`min-h-screen`}>
             <div className="max-w-3xl mx-auto mt-44 mb-8 px-8">
                 <ul className="space-y-4 text-neutral-100">
                     {urls.map((url, index) => (

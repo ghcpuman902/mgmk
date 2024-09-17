@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Page() {
     return (
         <div className="h-screen">
-            <div className="fixed top-3/4 left-1/2 transform -translate-x-1/2">
+            <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2">
                 <Link 
                     href="/list" 
                     className="group relative inline-block px-12 py-6 rounded-full 

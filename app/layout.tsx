@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next';
 import { Fira_Code } from 'next/font/google';
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { Background } from './components/background';
 
 const firaCode = Fira_Code({
   subsets: ['latin'],
@@ -30,8 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${firaCode.variable} font-sans antialiased fixed inset-0 overflow-hidden bg-black`}>
-        {children}
+      <body className={`${firaCode.variable} font-sans antialiased bg-black`}>
+        <Background/>
+          {children}
         <Analytics />
       </body>
     </html>

@@ -19,48 +19,52 @@ export const Background: React.FC<BackgroundProps> = () => {
         };
 
         const handleTouchMove = (e: TouchEvent) => {
-            e.preventDefault(); // Prevent default touch behavior
+            // Remove this line to allow default touch behavior
+            // e.preventDefault();
             const touch = e.touches[0];
             setMousePosition({ x: touch.clientX, y: touch.clientY });
         };
 
         const handleResize = () => {
-            setIsVertical(window.innerHeight > window.innerWidth);
+            setIsVertical(!isNavBar && window.innerHeight > window.innerWidth);
         };
 
-        const preventScroll = (e: Event) => {
-            e.preventDefault();
-        };
+        // Remove this function and its event listener
+        // const preventScroll = (e: Event) => {
+        //     e.preventDefault();
+        // };
 
         document.addEventListener('mousemove', syncPointer);
-        document.addEventListener('touchmove', handleTouchMove, { passive: false });
-        document.addEventListener('touchstart', preventScroll, { passive: false });
+        document.addEventListener('touchmove', handleTouchMove, { passive: true });
+        // Remove this line
+        // document.addEventListener('touchstart', preventScroll, { passive: false });
         window.addEventListener('resize', handleResize);
         handleResize(); // Initial check
 
-        // Disable body scroll
-        document.body.style.overflow = 'hidden';
-        document.body.style.position = 'fixed';
-        document.body.style.width = '100%';
-        document.body.style.height = '100%';
+        // Remove these lines to allow normal scrolling
+        // document.body.style.overflow = 'hidden';
+        // document.body.style.position = 'fixed';
+        // document.body.style.width = '100%';
+        // document.body.style.height = '100%';
 
         return () => {
             document.removeEventListener('mousemove', syncPointer);
             document.removeEventListener('touchmove', handleTouchMove);
-            document.removeEventListener('touchstart', preventScroll);
+            // Remove this line
+            // document.removeEventListener('touchstart', preventScroll);
             window.removeEventListener('resize', handleResize);
 
-            // Re-enable body scroll
-            document.body.style.overflow = '';
-            document.body.style.position = '';
-            document.body.style.width = '';
-            document.body.style.height = '';
+            // Remove these lines
+            // document.body.style.overflow = '';
+            // document.body.style.position = '';
+            // document.body.style.width = '';
+            // document.body.style.height = '';
         };
-    }, []);
+    }, [isNavBar]); // Add isNavBar to the dependency array
 
     return (
-        <div className={`fixed inset-0 ${isNavBar ? 'h-44' : 'h-full'} bg-black overflow-hidden transition-all duration-300`}>
-            <div className={`${isNavBar ? 'scale-50' : 'scale-100'} absolute inset-0 flex items-center justify-center transition-transform duration-300`}>
+        <div className={`fixed inset-0 ${isNavBar ? 'h-44' : 'h-full'} bg-black overflow-hidden transition-all duration-300 pointer-events-none`}>
+            <div className={`${isNavBar ? 'scale-80 md:scale-50' : 'scale-100'} absolute inset-0 flex items-center justify-center transition-transform duration-300`}>
 
                 <CircleArray isVertical={isVertical} />
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

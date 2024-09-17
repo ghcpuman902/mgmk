@@ -6,7 +6,7 @@ export default function Page() {
             <div className="fixed top-3/4 left-1/2 transform -translate-x-1/2">
                 <Link 
                     href="/list" 
-                    className="group relative px-12 py-6 rounded-full 
+                    className="group relative inline-block px-12 py-6 rounded-full 
                                transition-all duration-300 ease-in-out
                                focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2
                                text-lg font-semibold z-50"
@@ -17,6 +17,7 @@ export default function Page() {
                                      group-hover:opacity-100 group-hover:blur-md 
                                      transition-all duration-300 ease-in-out">
                     </span>
+                    <span className="absolute inset-0 z-20" aria-hidden="true"></span>
                 </Link>
             </div>
         </div>

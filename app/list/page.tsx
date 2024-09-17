@@ -19,11 +19,7 @@ export default async function Page() {
 
     return (
         <div className={`min-h-screen ${firaCode.className}`}>
-            <div className="max-w-3xl mx-auto p-8">
-                <div className="">
-                    <MGMKLogo className="w-1/3 h-auto fill-neutral-100" />
-                </div>
-                <h1 className="text-2xl mb-6 text-neutral-100">URL Shortener</h1>
+            <div className="max-w-3xl mx-auto mt-44 mb-8 px-8">
                 <ul className="space-y-4 text-neutral-100">
                     {urls.map((url, index) => (
                         <UrlListItem
@@ -36,10 +32,10 @@ export default async function Page() {
                     ))}
                 </ul>
             </div>
-            <div className="text-center text-neutral-400 text-xs mt-8 max-w-3xl mx-auto p-8">
+            <div className="text-center text-neutral-400 text-xs max-w-3xl mx-auto my-8 px-8">
                 If you want to park any URL, please get in touch at hi@manglekuo.com
             </div>
-            <div className="text-center mt-8 mb-12">
+            <div className="text-center my-8 mb-12">
                 <Link 
                     href="/" 
                     className="group relative inline-flex items-center justify-center px-8 py-3 rounded-full 

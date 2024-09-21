@@ -11,6 +11,7 @@ export function getUrls() {
     { shortPath: '/lu/nl', longDomain: 'manglekuo.com', longPath: '/works/london-underground-name-analysis/name-lab' },
     { shortPath: '/as', longDomain: 'manglekuo.com', longPath: '/works/article-search' },
     { shortPath: '/c24', longDomain: 'manglekuo.com', longPath: '/works/cannes-2024' },
+    { shortPath: '/lr', longDomain: 'manglekuo.com', longPath: '/works/letter' },
     { shortPath: '/me', longDomain: 'manglekuo.com', longPath: '/aboutme' },
   ]
 }

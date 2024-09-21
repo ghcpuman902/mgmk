@@ -2,10 +2,10 @@ import { getUrls } from './utils'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 
-export default function Page({ params }: { params: { slug: string[] } }) {
+export default function Page({ params }: { params: { slug?: string[] } }) {
   const urls = getUrls()
 
-  const path = '/' + params.slug.join('/')
+  const path = params.slug ? '/' + params.slug.join('/') : '/'
   const urlPair = urls.find(u => u.shortPath === path)
 
   if (urlPair) {

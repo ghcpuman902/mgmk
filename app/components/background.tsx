@@ -5,9 +5,7 @@ import { usePathname } from 'next/navigation';
 import { CircleArray } from './circle-array';
 import { MGMKLogo } from '../mgmkLogo';
 
-interface BackgroundProps { }
-
-export const Background: React.FC<BackgroundProps> = () => {
+export const Background = () => {
     const pathname = usePathname();
     const isNavBar = pathname !== '/';
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -58,7 +56,7 @@ export const Background: React.FC<BackgroundProps> = () => {
     }, [isNavBar]); // Add isNavBar to the dependency array
 
     return (
-        <div className={`fixed inset-0 ${isNavBar ? 'h-44 bg-blend-lighten' : 'h-full'} bg-black overflow-hidden transition-all duration-300 pointer-events-none`}>
+        <div className={`fixed inset-0 ${isNavBar ? 'h-44' : 'h-full'} bg-black overflow-hidden transition-all duration-300 pointer-events-none`}>
             <div className={`${isNavBar ? 'scale-80 md:scale-50' : (isVertical ? 'scale-150' : 'scale-100')} absolute inset-0 flex items-center justify-center transition-transform duration-300`}>
 
                 <CircleArray isVertical={isVertical} />

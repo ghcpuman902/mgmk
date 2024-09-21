@@ -12,6 +12,7 @@ export function getUrls() {
     { shortPath: '/as', longDomain: 'manglekuo.com', longPath: '/works/article-search' },
     { shortPath: '/c24', longDomain: 'manglekuo.com', longPath: '/works/cannes-2024' },
     { shortPath: '/lr', longDomain: 'manglekuo.com', longPath: '/works/letter' },
+    { shortPath: '/g/m/t/m/a/s/w/l', longDomain: 'github.com', longPath: '/ghcpuman902/manglekuo.com/tree/master/app/(shadcn)/works/letter' },
     { shortPath: '/me', longDomain: 'manglekuo.com', longPath: '/aboutme' },
   ]
 }

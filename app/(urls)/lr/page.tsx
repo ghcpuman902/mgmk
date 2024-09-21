@@ -11,7 +11,7 @@ export const metadata = {
       url: 'https://mg.mk/lr',
       images: [
         {
-          url: 'https://mg.mk/assets/letter-thumbnail.png',
+          url: 'https://mg.mk/opengraph-image.jpg',
           width: 1200,
           height: 630,
           alt: 'A polite request for Oracle to free the JavaScript trademark',
@@ -24,7 +24,7 @@ export const metadata = {
       card: 'summary_large_image',
       title: 'Free the JavaScript Trademark - A Request to Oracle',
       description: 'JavaScript is a widely-used generic term. Explore this letter asking Oracle to release the trademark and join the cause.',
-      images: ['https://mg.mk/assets/letter-thumbnail.png'],
+      images: ['https://mg.mk/twitter-image.jpg'],
     },
   }
 
